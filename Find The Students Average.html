@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Find The Students Average</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var grade = [80, 77, 88, 95, 68];
+			var average = 0;
+			var Grades = 0;
+			for(var a=0; a < grade.length; a ++ ){
+				Grades += grade[a];
+			}
+			average = Grades/grade.length;
+			var letter = "";
+
+			if(average < 60){
+				letter = "F";
+			}else if(average <= 70){
+				letter = "D";
+			}else if(average <= 80){
+				letter = "C";
+			}else if(average <= 90){
+				letter = "B";
+			}else if(average <= 100){
+				letter = "A";
+			}
+			console.log(average);
+			console.log(letter);
+		</script>
+	</body>
+</html>
