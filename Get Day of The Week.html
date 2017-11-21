@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Get Day of the Week</title>
+	</head>
+	<body>
+		<h1 id="date"></h1>
+        <script type="text/javascript">
+			var day;
+            switch (new Date().getDay()) {
+    			case 0:
+        			day = "Sunday";
+        			document.getElementById('date').innerHTML = 'Hello everyone today is Sunday'
+        			break;
+    			case 1:
+        			day = "Monday";
+        			document.getElementById('date').innerHTML = 'Hello everyone today is Monday'
+        			break;
+    			case 2:
+        			day = "Tuesday";
+        			document.getElementById('date').innerHTML = 'Hello everyone today is Tuesday'
+        			break;
+    			case 3:
+        			day = "Wednesday";
+        			document.getElementById('date').innerHTML = 'Hello everyone today is Wednesday'
+					break;
+    			case 4:
+        			day = "Thursday";
+        			document.getElementById('date').innerHTML = 'Hello everyone today is Thursday'
+        			break;
+    			case 5:
+        			day = "Friday";
+        			document.getElementById('date').innerHTML = 'Hello everyone today is Friday'
+        			break;
+    			case 6:
+        			day = "Saturday";
+        			document.getElementById('date').innerHTML = 'Hello everyone today is Saturday'
+        			break;
+			     }
+        </script>
+	</body>
+</html>
