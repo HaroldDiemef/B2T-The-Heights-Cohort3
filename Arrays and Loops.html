@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Arrays and Loops</title>
+	</head>
+	<body>
+		<h1 id="demo"></h1>
+		<script type="text/javascript">
+		
+			var color = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
+			var o = ['th', 'st', 'nd', 'rd'];
+			var list
+			var choice
+		
+			for (var i = 0; i < color.length; i++) {
+		
+			switch (i) {
+			
+				case 0: 	
+				var choice = o[1];
+				break;
+				
+				case 1: 	
+				var choice = o[2];
+				break;
+				
+				case 2: 
+				var choice = o[3];
+				break;
+
+
+				default: 	
+				var choice = o[0];
+				break;
+						}
+			document.getElementById('demo').innerHTML += (i + 1) + choice + " choice is " + color[i] + "<br>";
+				}
+		</script>
+	</body>
+</html>
