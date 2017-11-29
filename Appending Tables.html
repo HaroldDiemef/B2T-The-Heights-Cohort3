@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Appending Tables</title>
+	</head>
+	
+	<body>
+		<table id="myTable" border = "1">
+			<tr>
+				<td>Clifford</td>
+				<td>Harris</td>
+			</tr>
+		</table><br>
+		
+		Column 1: <input type="text" id="col1" value="Curtis"><br>
+		Column 2: <input type="text" id="col2" value="Jackson"><br>
+		<input type="button" onclick="insertRow()" value= "Insert row">
+		<br>
+		<input type="button" onclick="deleteRow()" value= "Clear row">
+		
+		<script type="text/javascript">
+			function insertRow(){
+			    var table = document.getElementById("myTable");
+			    var newtr = table.insertRow(1);
+			    var newtd1 = newtr.insertCell(0);
+			    var newtd2 = newtr.insertCell(1);
+			    newtd1.innerHTML = document.getElementById("col1").value;
+				newtd2.innerHTML = document.getElementById("col2").value;
+				}
+			function deleteRow() {
+   			document.getElementById("myTable").deleteRow(-1);
+			}
+		</script>
+	</body>
+</html>
