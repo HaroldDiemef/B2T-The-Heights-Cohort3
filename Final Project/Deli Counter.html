@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Good Burger</title>
+		<style type="text/css">
+			table {
+				width: 100px;
+			}
+			input[type=button]{
+				background-color: yellow;
+			}
+			body {
+				font-family: verdana;
+				background-image: url('blueburger.jpg');
+				background-size: 1600px;
+				color: white;
+			}
+			.mods {
+				background-color: brown;
+				width: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="mods">Welcome to Good Burger, home of the Good Burger, May i take your order?</h1>
+		<!-- Input to display name and order -->
+		<h3 class="mods">Customer's Name:</h3><input type="text" id="inputName"><br>
+		<h3 class="mods">Customer's Order:</h3><input type="text" id="inputOrder"><br><br>
+		<!-- Displays button to add and remove elements from the array -->	
+		<input type="button" value="Add Customer" onclick="addOrder()"><br>
+
+		<input type="button" value="Customer Served" onclick="served()">
+
+
+		<br><br>
+		<h3 class="mods" id="serveDisplay"></h3>
+		<table border="3" id="display" class="mods">
+			<tr>
+				<th>Position</th>
+				<th>Name</th>
+				<th>Order</th>
+			</tr>
+
+		</table>
+		
+
+		<script type="text/javascript">
+			//Container that holds name and order objects
+			var displayOrder = [];
+			//Adds inputs to the array
+			function addOrder(){
+				//Creates an object with the properties of name and order 
+				var custOrder = {
+					 Name: document.getElementById('inputName').value,
+					 Order: document.getElementById('inputOrder').value,
+				};
+				//Adds objects to the array
+				displayOrder.push(custOrder);
+				displayArray();
+				
+			}
+			//Removes the elements from the array and displays on page
+			function served(){
+				var removedOrder= displayOrder.shift();
+				//If the array is empty display this
+				if (displayOrder.length==0){
+					document.getElementById("serveDisplay").innerHTML = 'The line is empty.'
+				//If the array is not empty display this
+				}else{
+					document.getElementById("serveDisplay").innerHTML = removedOrder.Name + '  was served  '+ removedOrder.Order
+				}
+				displayArray();
+			}
+			//Displays elements from the array in the table
+			function displayArray(){
+				//Adds header to the table 
+				document.getElementById('display').innerHTML = "";
+				var tr = document.createElement("tr")
+				document.getElementById("display").appendChild(tr)
+				var th = document.createElement("th")
+				var th1 = document.createElement("th")
+				var th2 = document.createElement("th")
+				tr.appendChild(th)
+				tr.appendChild(th1)
+				tr.appendChild(th2)
+				//Puts text in the table header
+				th.innerHTML='Position'
+				th1.innerHTML='Name'
+				th2.innerHTML='Order'
+				//Loops through the array displaying the objects of the array on the table
+				for(var i = 0; i < displayOrder.length; i++){
+					var tr = document.createElement("tr")
+					document.getElementById("display").appendChild(tr)
+					var td = document.createElement("td")
+					var td1 = document.createElement("td")
+					var td2 = document.createElement("td")
+					tr.appendChild(td)
+					tr.appendChild(td1)
+					tr.appendChild(td2)
+					//Uses index of the element as its position  
+					td.innerHTML=i+1
+					//Gets the element properties and displays them in table data
+					td1.innerHTML=displayOrder[i].Name
+					td2.innerHTML=displayOrder[i].Order
+					
+				}
+			}
+			
+		</script>
+		
+	</body>
+
+</html>
